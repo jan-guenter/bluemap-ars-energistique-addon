@@ -3,6 +3,7 @@
 | Project | Identity | License | Use | Redistributed |
 | --- | --- | --- | --- | --- |
 | BlueMap | `5.22-agent.backport-5.22-mc1.21.1-2` / `9be321df995a1103808621d529eb72773e719d4d` | MIT | Compile-only internal API | No |
+| BlueMap AE2 Add-on | `3afcd97cb6da13956ed9090604b02b06bff9726b` | LGPL-3.0-only | Compile-only data registration API and soft runtime integration | No |
 | Ars Énergistique profile | `arseng-2.1.1-beta-mc1.21.1` | See `provenance/upstreams.json` | Exact installed-artifact and resource evidence only | No |
 
 The packaged `META-INF/LICENSE-BlueMap` preserves the license notice for the

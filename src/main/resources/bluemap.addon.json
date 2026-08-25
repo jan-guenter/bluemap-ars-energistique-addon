@@ -2,5 +2,5 @@
   "id": "bluemap-ars-energistique",
   "entrypoint": "io.github.janguenter.bluemap.arseng.BlueMapArsEnergistiqueAddon",
   "dependencies": [],
-  "soft-dependencies": []
+  "soft-dependencies": ["bluemap-ae2"]
 }
