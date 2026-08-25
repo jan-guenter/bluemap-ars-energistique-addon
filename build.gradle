@@ -27,7 +27,7 @@ repositories {
 }
 
 def ae2AddonJar = providers.gradleProperty('ae2AddonJar')
-        .getOrElse('../bluemap-ae2-addon/build/libs/bluemap-ae2-addon-0.1.0-alpha.2.jar')
+        .getOrElse('../bluemap-ae2-addon/build/libs/bluemap-ae2-addon-0.1.0-alpha.3.jar')
 
 dependencies {
     compileOnly "de.bluecolored:bluemap-core:${bluemap_version}"
@@ -163,6 +163,26 @@ tasks.register('verifyPinnedArtifacts', Exec) {
     }
 }
 
+tasks.register('verifyAe2AddonApiJar') {
+    inputs.file(ae2AddonJar)
+    doLast {
+        def candidate = inputs.files.singleFile
+        def expectedSize = 1252649L
+        def expectedSha256 =
+                'f7014e1c60bdf02fa22583a7b5b5cbf6f3076a0b2371601360775507d473a12d'
+        def actualSha256 = java.security.MessageDigest.getInstance('SHA-256')
+                .digest(candidate.bytes)
+                .encodeHex()
+                .toString()
+        if (candidate.length() != expectedSize || actualSha256 != expectedSha256) {
+            throw new GradleException(
+                    "BlueMap AE2 Add-on API JAR mismatch: ${candidate.length()} bytes, "
+                            + "SHA-256 ${actualSha256}"
+            )
+        }
+    }
+}
+
 tasks.register('verifyProductionJar') {
     dependsOn tasks.named('jar')
     inputs.file(productionJar)
@@ -273,6 +293,7 @@ tasks.named('check').configure {
 
 tasks.register('prototypeCheck') {
     dependsOn tasks.named('check')
+    dependsOn tasks.named('verifyAe2AddonApiJar')
     dependsOn tasks.named('verifyPinnedArtifacts')
     dependsOn tasks.named('lintGallery')
 }

@@ -13,16 +13,16 @@ stock resource models.
 ```bash
 gradle --no-daemon \
   -PbluemapSourcePath=../bluemap-backport \
-  -Pae2AddonJar=../bluemap-ae2-addon/build/libs/bluemap-ae2-addon-0.1.0-alpha.2.jar \
+  -Pae2AddonJar=../bluemap-ae2-addon/build/libs/bluemap-ae2-addon-0.1.0-alpha.3.jar \
   clean check build
 ```
 
 `check` is the quick Java/checkstyle/archive gate. `prototypeCheck` additionally
-requires every exact candidate JAR property and validates the 25-cell gallery.
-The AE2 JAR argument must contain the external-registration API; it is a
-compile/test input and is never bundled. See `provenance/upstreams.json` for
-immutable artifact identities and the [execution guide](docs/EXECUTION.md) for
-the prototype-to-release loop.
+requires every exact candidate JAR property, verifies the exact AE2 alpha.3 API
+JAR, and validates the 25-cell gallery. The AE2 JAR is a compile/test input and
+is never bundled. See `provenance/upstreams.json` for immutable artifact
+identities and the [execution guide](docs/EXECUTION.md) for the
+prototype-to-release loop.
 
 ## Install
 

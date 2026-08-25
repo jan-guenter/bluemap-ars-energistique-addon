@@ -117,12 +117,20 @@ jobs:
           sha256sum --check <<SHA256SUMS
           90796df69bfb39b1a9c79edbfa01c2425e5b86aea47dc55ebdcbf30e88f47592  ${input_dir}/ars_nouveau-1.21.1-5.13.0.jar
           SHA256SUMS
+          curl --fail --location --retry 3 --retry-all-errors \
+            --output "${input_dir}/bluemap-ae2-addon-0.1.0-alpha.3.jar" \
+            "https://github.com/jan-guenter/bluemap-ae2-addon/releases/download/v0.1.0-alpha.3/bluemap-ae2-addon-0.1.0-alpha.3.jar"
+          test "$(stat -c %s "${input_dir}/bluemap-ae2-addon-0.1.0-alpha.3.jar")" -eq 1252649
+          sha256sum --check <<SHA256SUMS
+          f7014e1c60bdf02fa22583a7b5b5cbf6f3076a0b2371601360775507d473a12d  ${input_dir}/bluemap-ae2-addon-0.1.0-alpha.3.jar
+          SHA256SUMS
 
       - name: Build and verify accepted release candidate
         run: |
           input_dir="${RUNNER_TEMP}/exact-inputs"
           gradle --no-daemon \
             -PbluemapSourcePath=.ci/bluemap \
+            -Pae2AddonJar="${input_dir}/bluemap-ae2-addon-0.1.0-alpha.3.jar" \
             -ParsengJar="${input_dir}/arseng-2.1.1-beta.jar" \
             -PappliedEnergisticsJar="${input_dir}/appliedenergistics2-19.2.17.jar" \
             -ParsNouveauJar="${input_dir}/ars_nouveau-1.21.1-5.13.0.jar" \
@@ -168,6 +176,7 @@ jobs:
           input_dir="${RUNNER_TEMP}/exact-inputs"
           gradle --no-daemon \
             -PbluemapSourcePath=.ci/bluemap \
+            -Pae2AddonJar="${input_dir}/bluemap-ae2-addon-0.1.0-alpha.3.jar" \
             -ParsengJar="${input_dir}/arseng-2.1.1-beta.jar" \
             -PappliedEnergisticsJar="${input_dir}/appliedenergistics2-19.2.17.jar" \
             -ParsNouveauJar="${input_dir}/ars_nouveau-1.21.1-5.13.0.jar" \
