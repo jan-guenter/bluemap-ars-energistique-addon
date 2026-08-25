@@ -1,10 +1,21 @@
 {
-  "accepted_staging_entries": null,
+  "accepted_staging_entries": {
+    "entry_count": 21,
+    "path": "provenance/accepted-staging-entries.sha256",
+    "sha256": "f92bb65e027459a4d263c75af888e854a02047db68d7afff5d026e5a516a1b42"
+  },
   "final_release_artifacts": null,
-  "note": "Populate only after owner visual acceptance; this file is not packaged.",
-  "owner_accepted_staging": null,
+  "note": "Owner acceptance is recorded; final-version promotion artifacts remain pending. This file is not packaged.",
+  "owner_accepted_staging": {
+    "accepted_at": "2026-08-25",
+    "commit": "d1355cbc543baba8ace0fbbda4182df4ec4960fd",
+    "production_jar_sha256": "75a1cbeae9247b527c2c9a9382feb4870d868988cdf84ae50ad263cac3c647fb",
+    "production_jar_size": 52397,
+    "tree": "8917bc720d1360632b2b56fc091f93d0c7364234",
+    "visual_acceptance": true
+  },
   "repository": "https://github.com/jan-guenter/bluemap-ars-energistique-addon",
   "schema_version": 1,
-  "status": "prototype-not-owner-accepted",
+  "status": "owner-accepted-staging",
   "version": "0.1.0-SNAPSHOT"
 }
