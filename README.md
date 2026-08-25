@@ -3,10 +3,10 @@
 A Java 21 BlueMap add-on for the exact `arseng-2.1.1-beta-mc1.21.1` profile in All the Mons
 `1.2.0` / Minecraft `1.21.1`.
 
-Status: visual-review prototype. The exact artifact gate registers three cable
-parts and five Source Storage Cell models through the data-only public API in
-the BlueMap AE2 add-on. Direct Ars Énergistique blocks retain their correct
-stock resource models.
+Status: `0.1.0-alpha.1` is the owner-accepted first release candidate. The exact
+artifact gate registers three cable parts and five Source Storage Cell models
+through the data-only public API in the BlueMap AE2 add-on. Direct Ars
+Énergistique blocks retain their correct stock resource models.
 
 ## Build
 
