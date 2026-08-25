@@ -1,2 +1,26 @@
 case_id	label	x	y	z	block_state	expected
-stock-control	stone stock rendering control	176	100	175	minecraft:stone	stock-visible
+me-source-jar-north	empty ME Source Jar facing north	176	100	176	arseng:me_source_jar[facing=north,waterlogged=false]	stock-shell-visible
+me-source-jar-east	empty ME Source Jar facing east	180	100	176	arseng:me_source_jar[facing=east,waterlogged=false]	stock-shell-visible
+me-source-jar-south	empty ME Source Jar facing south	184	100	176	arseng:me_source_jar[facing=south,waterlogged=false]	stock-shell-visible
+me-source-jar-west	empty ME Source Jar facing west	188	100	176	arseng:me_source_jar[facing=west,waterlogged=false]	stock-shell-visible
+source-acceptor-control	ME Source Converter stock-model control	192	100	176	arseng:source_acceptor	stock-model-visible
+cable-source-acceptor-down	cable source acceptor on down	176	100	180	ae2:cable_bus	ae2-extension-part-visible
+cable-source-acceptor-up	cable source acceptor on up	180	100	180	ae2:cable_bus	ae2-extension-part-visible
+cable-source-acceptor-north	cable source acceptor on north	184	100	180	ae2:cable_bus	ae2-extension-part-visible
+cable-source-acceptor-south	cable source acceptor on south	188	100	180	ae2:cable_bus	ae2-extension-part-visible
+cable-source-acceptor-west	cable source acceptor on west	192	100	180	ae2:cable_bus	ae2-extension-part-visible
+cable-source-acceptor-east	cable source acceptor on east	196	100	180	ae2:cable_bus	ae2-extension-part-visible
+source-p2p-tunnel-down	source p2p tunnel on down	176	100	184	ae2:cable_bus	ae2-extension-part-visible
+source-p2p-tunnel-up	source p2p tunnel on up	180	100	184	ae2:cable_bus	ae2-extension-part-visible
+source-p2p-tunnel-north	source p2p tunnel on north	184	100	184	ae2:cable_bus	ae2-extension-part-visible
+source-p2p-tunnel-south	source p2p tunnel on south	188	100	184	ae2:cable_bus	ae2-extension-part-visible
+source-p2p-tunnel-west	source p2p tunnel on west	192	100	184	ae2:cable_bus	ae2-extension-part-visible
+source-p2p-tunnel-east	source p2p tunnel on east	196	100	184	ae2:cable_bus	ae2-extension-part-visible
+spell-p2p-tunnel-down	spell p2p tunnel on down	176	100	188	ae2:cable_bus	ae2-extension-part-visible
+spell-p2p-tunnel-up	spell p2p tunnel on up	180	100	188	ae2:cable_bus	ae2-extension-part-visible
+spell-p2p-tunnel-north	spell p2p tunnel on north	184	100	188	ae2:cable_bus	ae2-extension-part-visible
+spell-p2p-tunnel-south	spell p2p tunnel on south	188	100	188	ae2:cable_bus	ae2-extension-part-visible
+spell-p2p-tunnel-west	spell p2p tunnel on west	192	100	188	ae2:cable_bus	ae2-extension-part-visible
+spell-p2p-tunnel-east	spell p2p tunnel on east	196	100	188	ae2:cable_bus	ae2-extension-part-visible
+source-cell-drive	AE2 Drive with all five Source Storage Cells	176	100	192	ae2:drive[facing=south,spin=0]	ae2-extension-cells-visible
+stock-control	stone stock rendering control	180	100	192	minecraft:stone	stock-visible

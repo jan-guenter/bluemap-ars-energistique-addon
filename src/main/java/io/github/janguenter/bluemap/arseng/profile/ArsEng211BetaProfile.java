@@ -10,6 +10,16 @@ import java.util.List;
 public final class ArsEng211BetaProfile {
 
     public static final String PROFILE_ID = "arseng-2.1.1-beta-mc1.21.1";
+    public static final List<String> REQUIRED_AE2_MODELS = List.of(
+            "arseng:part/source_acceptor",
+            "arseng:part/source_p2p_tunnel",
+            "arseng:part/spell_p2p_tunnel",
+            "arseng:block/drive/cells/1k_source_cell",
+            "arseng:block/drive/cells/4k_source_cell",
+            "arseng:block/drive/cells/16k_source_cell",
+            "arseng:block/drive/cells/64k_source_cell",
+            "arseng:block/drive/cells/256k_source_cell"
+    );
     public static final List<ArtifactPin> ARTIFACTS = List.of(
             new ArtifactPin(
                     "arseng",

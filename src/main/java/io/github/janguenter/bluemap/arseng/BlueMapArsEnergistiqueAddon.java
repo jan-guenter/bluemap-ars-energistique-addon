@@ -5,6 +5,7 @@
 package io.github.janguenter.bluemap.arseng;
 
 import io.github.janguenter.bluemap.arseng.adapter.bluemap522.AdapterCompatibility;
+import io.github.janguenter.bluemap.arseng.integration.ae2.Ae2BridgeLifecycle;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -19,6 +20,7 @@ public final class BlueMapArsEnergistiqueAddon implements Runnable {
                 inactive("unsupported BlueMap internal ABI", null);
                 return;
             }
+            Ae2BridgeLifecycle.register();
             Class<?> adapter = Class.forName(
                     "io.github.janguenter.bluemap.arseng.adapter.bluemap522.BlueMap522Adapter",
                     true,

@@ -1,11 +1,12 @@
-# Placeholder gallery
+# Ars Énergistique gallery
 
-This generated gallery proves only the deterministic data-pack mechanics and a
-single `minecraft:stone` stock control at `(176, 100, 175)`. It does not claim
-Ars Énergistique support.
+The deterministic 25-cell gallery covers every horizontal ME Source Jar
+facing, the stock Source Acceptor, all three Ars Énergistique AE2 parts on all
+six cable-bus faces, one drive containing all five Source Storage Cells, and a
+stone control.
 
-Replace `cases.py` with the smallest real defect fixture and stock controls,
-then keep the stable commands:
+Live Source fill, AE2 power/channel state, and P2P frequency remain neutral.
+Those runtime states are outside this add-on's stable static-map contract.
 
 ```bash
 python gallery/generate.py
@@ -14,6 +15,5 @@ python gallery/lint.py
 bash gallery/package.sh /tmp/arseng-gallery.zip
 ```
 
-The release gate rejects the `SCAFFOLD_NOT_IMPLEMENTED` marker in `cases.py`.
-Keep gallery generation deterministic, bounded, synthetic where practical, and
-free of candidate assets or captured meshes.
+The gallery is bounded and generated from commands only. It contains no copied
+mod assets or captured meshes.

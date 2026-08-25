@@ -56,6 +56,13 @@
     "redistributed": false,
     "version": "5.22-agent.backport-5.22-mc1.21.1-2"
   },
+  "bluemap_ae2_api": {
+    "bundled": false,
+    "commit": "3afcd97cb6da13956ed9090604b02b06bff9726b",
+    "license": "LGPL-3.0-only",
+    "repository": "https://github.com/jan-guenter/bluemap-ae2-addon",
+    "use": "Compile-only data registration API and soft runtime integration"
+  },
   "pack": {
     "commit": "c7bb230f21d14d26859d0b92548f089b3a493ad9",
     "minecraft": "1.21.1",
