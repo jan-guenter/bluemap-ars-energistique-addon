@@ -21,23 +21,23 @@
   "candidate_artifacts": {
     "production_jar": {
       "file_name": "bluemap-ars-energistique-addon-0.1.0-alpha.2.jar",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 58318,
+      "sha256": "e6f9d86629009880e87762c062fa109070793e91de4cf6494820b0d75b584f8c"
     },
     "sources_jar": {
       "file_name": "bluemap-ars-energistique-addon-0.1.0-alpha.2-sources.jar",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 45682,
+      "sha256": "691198c7bb9ad58143b926254f20d771f84193ac021e702a6f976898715bc69e"
     },
     "pom": {
       "file_name": "bluemap-ars-energistique-addon-0.1.0-alpha.2.pom",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 1375,
+      "sha256": "4604a8648aa773a27428982e7061f4b1c559458d30ec222194c907bf2169c6c4"
     },
     "gradle_module": {
       "file_name": "bluemap-ars-energistique-addon-0.1.0-alpha.2.module.json",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 2880,
+      "sha256": "2bbd432c74d5f2bb343fb9404295ca7c54f34bf3f84723fc15e4a13423736bf9"
     }
   },
   "exact_feature_backport_migration": {
@@ -72,15 +72,17 @@
     "gallery_review_cells": 25,
     "gallery_sources_changed": false,
     "runtime_profile_and_ae2_definitions_changed": false,
-    "resource_extension_factory_contract_tested": false
+    "resource_extension_factory_contract_tested": true,
+    "consumer_tests_passed": 8
   },
   "verification": {
-    "exact_input_gate": false,
-    "production_archive_boundary_gate": false,
-    "sources_archive_boundary_gate": false,
-    "adapter_api_migration_boundary_gate": false,
-    "exact_feature_backport_runtime_identity_gate": false,
-    "gallery_lint": false,
-    "checkstyle": false
+    "exact_input_gate": true,
+    "production_archive_boundary_gate": true,
+    "sources_archive_boundary_gate": true,
+    "adapter_api_migration_boundary_gate": true,
+    "exact_feature_backport_runtime_identity_gate": true,
+    "gradle_9_4_clean_builds": 1,
+    "gallery_lint": true,
+    "checkstyle": true
   }
 }
