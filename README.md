@@ -1,20 +1,28 @@
 # BlueMap Ars Énergistique Add-on
 
-A Java 21 BlueMap add-on for the exact `arseng-2.1.1-beta-mc1.21.1` profile in All the Mons
-`1.2.0` / Minecraft `1.21.1`.
+A Java 21 BlueMap 5.23 feature-backport add-on for the exact
+`arseng-2.1.1-beta-mc1.21.1` profile in All the Mons `1.2.0` / Minecraft
+`1.21.1`.
 
-Status: `0.1.0-alpha.1` is the owner-accepted first release candidate. The exact
-artifact gate registers three cable parts and five Source Storage Cell models
-through the data-only public API in the BlueMap AE2 add-on. Direct Ars
+Status: unpublished `0.1.0-alpha.2` migration candidate. The owner accepted
+and released the unchanged three cable parts and five Source Storage Cell
+models in `0.1.0-alpha.1`. This candidate targets only BlueMap
+feature-backport commit `7e07f4e74ec1e92a6ead9aa1e66054af3e133aac` and API
+commit `285c9a60eff3ac2b0cab308ce1058d1565be0971`. Direct Ars
 Énergistique blocks retain their correct stock resource models.
 
 ## Build
 
-Clone with `--recurse-submodules`, or initialize an existing checkout with
-`git submodule update --init --recursive -- tooling/bluemap-addon-toolkit`.
-The settings preflight accepts only the committed toolkit gitlink at commit
-`6cd34a8368cc4ee8628fbe830a90ec5b14960629` and rejects an uninitialized,
-changed, or dirty toolkit checkout.
+Clone with `--recurse-submodules`, or initialize an existing checkout with:
+
+```bash
+git submodule update --init --recursive -- \
+  tooling/bluemap-addon-toolkit modules/bluemap-addon-adapter-api
+```
+
+The settings preflight accepts only the committed toolkit and Adapter API
+gitlinks. It rejects an uninitialized, changed, dirty, incorrectly pinned, or
+source-tree-mismatched checkout.
 
 ```bash
 gradle --no-daemon \
@@ -23,12 +31,13 @@ gradle --no-daemon \
   clean check build
 ```
 
-`check` is the quick Java/checkstyle/archive gate. `prototypeCheck` additionally
-requires every exact candidate JAR property, verifies the exact AE2 alpha.3 API
-JAR, and validates the 25-cell gallery. The AE2 JAR is a compile/test input and
-is never bundled. See `provenance/upstreams.json` for immutable artifact
-identities and the [execution guide](docs/EXECUTION.md) for the
-prototype-to-release loop.
+`check` is the Java, checkstyle, and archive gate. `prototypeCheck` also
+requires every exact candidate JAR property, verifies the exact AE2 alpha.3
+API JAR, and validates the 25-cell gallery. The production and sources JARs
+contain the four exact Adapter API sources, never the standalone module JAR.
+The AE2 JAR remains a compile/test input and is never bundled. See
+`provenance/upstreams.json` for immutable input identities and the
+[execution guide](docs/EXECUTION.md) for the review and release loop.
 
 ## Install
 
