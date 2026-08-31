@@ -1,12 +1,11 @@
 {
   "schema_version": 1,
-  "status": "unpublished-migration-candidate",
+  "status": "owner-accepted-release-candidate",
   "version": "0.1.0-alpha.2",
   "release_date": "2026-08-31",
   "repository": "https://github.com/jan-guenter/bluemap-ars-energistique-addon",
   "tag": "v0.1.0-alpha.2",
   "maven_coordinate": "io.github.jan-guenter:bluemap-ars-energistique-addon:0.1.0-alpha.2",
-  "published": false,
   "inherited_visual_acceptance": {
     "baseline_version": "0.1.0-alpha.1",
     "baseline_release_commit": "33a8cc848d51384dcc11d817c09957601a9c7234",
@@ -18,7 +17,48 @@
     "original_visual_acceptance": true,
     "scope": "The exact Ars Energistique profile, three cable-bus parts, five Source Storage Cell models, gallery, AE2 data definitions and stock fallback are unchanged. Alpha.2 moves only the BlueMap adapter boundary and shared bootstrap helpers to their 5.23-only packages."
   },
-  "candidate_artifacts": {
+  "owner_accepted_staging": {
+    "accepted_at": "2026-08-31",
+    "visual_acceptance": true,
+    "evidence_bundle": "bluemap-atmons-integration-20260831-ars-batch-523-native",
+    "tested_source_commit": "14ee6f5e4f0d8d3a788f9829332a07f5e3fb392c",
+    "tested_source_tree": "355e3ba63f89854940ea1d941e8f6170d3176df0",
+    "base_release_candidate": {
+      "file_name": "bluemap-ars-energistique-addon-0.1.0-alpha.2.jar",
+      "size": 58318,
+      "sha256": "e6f9d86629009880e87762c062fa109070793e91de4cf6494820b0d75b584f8c",
+      "entrypoint_class_sha256": "ea2484a70ed45f23b6b1eac7e834fcc842680cb6b01ad7e6697e6c16499e5ea2"
+    },
+    "staged_visual_artifact": {
+      "file_name": "bluemap-ars-energistique-addon-0.1.0-alpha.1.jar",
+      "size": 58689,
+      "sha256": "195135e08ee73d1a8e3d9f8d96f9d8f8264497e70f6d64003299529ad3140b0c",
+      "gate_mode": "local-native-523-entrypoint-overlay",
+      "replaced_class": "io/github/janguenter/bluemap/arseng/BlueMapArsEnergistiqueAddon.class",
+      "replaced_class_sha256": "ec8cb68a451edffb125d95d9cd1e95e91fdf199637b0e22451f8196bb67cdc1c"
+    },
+    "acceptance_scope": "The owner accepted the combined-gallery render produced from the alpha.2 base candidate with only its entrypoint replaced by the integration marker overlay. The profile, adapter and AE2 data-definition classes came unchanged from the base candidate.",
+    "exact_production_jar_runtime_gate": false,
+    "runtime_suite": {
+      "status": "passed",
+      "galleries": 51,
+      "passed": 51,
+      "failed": 0,
+      "ars_energistique_checks": 25,
+      "sha256": "c29e211846dc32e74d1907e7fb7170b741753784d85b88d5ca40574177d4d38f"
+    },
+    "render": {
+      "map_id": "atmons_integration",
+      "fresh_tiles": 589,
+      "regions": 4,
+      "evidence_sha256": "f61a87553006be39603cc77872ef9ebe0ffd18d57d2c87d380055aa2ba25f2db",
+      "browser_sanity": true,
+      "owner_visual_acceptance": true
+    },
+    "candidate_manifest_sha256": "f8f3b03e15743ff5069c8882c14a0afc579a4e84431b4f0f5b116c20eadae39e",
+    "candidate_override_lock_sha256": "d78e87a56bf63f28fb20fde376f49ade70a4d911c47f907d8a44c22f20c8fd5d"
+  },
+  "final_release_artifacts": {
     "production_jar": {
       "file_name": "bluemap-ars-energistique-addon-0.1.0-alpha.2.jar",
       "size": 58318,
@@ -37,8 +77,20 @@
     "gradle_module": {
       "file_name": "bluemap-ars-energistique-addon-0.1.0-alpha.2.module.json",
       "size": 2880,
-      "sha256": "2bbd432c74d5f2bb343fb9404295ca7c54f34bf3f84723fc15e4a13423736bf9"
+      "sha256": "5919fc94ea820bac01d2610f3ed5fcccfa097a424f8f112a571b0bca50756774"
     }
+  },
+  "accepted_staging_entries": {
+    "path": "provenance/accepted-staging-entries.sha256",
+    "entry_count": 22,
+    "sha256": "56cc101849bbe1c4cf2e23cd60132a32f40f24a14c6de49f86da80f3f8366fac"
+  },
+  "staged_equivalence": {
+    "entry_manifest": "provenance/accepted-staging-entries.sha256",
+    "identical_non_manifest_entries": 22,
+    "whole_jar_byte_identical": true,
+    "only_changed_entry_bytes": "none",
+    "change_reason": "The sealed release artifact reproduces the exact alpha.2 base candidate used to build the accepted integration overlay."
   },
   "exact_feature_backport_migration": {
     "bluemap_version": "5.22-feature.backport-5.23-stateless-java-web-server-46",
@@ -83,6 +135,9 @@
     "exact_feature_backport_runtime_identity_gate": true,
     "gradle_9_4_clean_builds": 1,
     "gallery_lint": true,
-    "checkstyle": true
+    "checkstyle": true,
+    "combined_integration_two_boot_gate": true,
+    "staged_overlay_owner_visual_acceptance": true,
+    "exact_production_jar_runtime_gate": false
   }
 }
